@@ -1,12 +1,15 @@
 class PostController {
     static postsDiv = () => document.getElementById("post")
+    static repliesDiv = () => document.getElementById('replies')
 
     static async init() {
         let postForm = document.getElementById('post-create')
+        let replyForm = document.getElementById('replies-create')
         // let postsDiv =  document.getElementById("post")
         postForm.addEventListener("submit", PostController.addPost)
+        replyForm.addEventListener("submit", PostController.addReply)
         let feed = await PostController.getAllPosts()
-        feed.forEach(post => PostController.displayPost(post, PostController.postsDiv()))
+        PostController.displayAllPosts(feed)
     }
 
     static async getPost(id) {
@@ -20,13 +23,43 @@ class PostController {
         // let postsDiv =  document.getElementById("post")
         let postDiv = post.createPostDiv()
          postDiv.addEventListener("click", PostController.displayRepliesOnClick)
+        
+         let postLike = postDiv.children[3]
+         postLike.addEventListener('click', PostController.likePost)
         location.appendChild(postDiv)
     }
 
-    static async displayRepliesOnClick(event) {
+    static async redisplayAllPosts() {
+        let post = await PostController.getAllPosts()
+        PostController.displayAllPosts(post)
+    }
+
+    static async likePost(event){
+        let post = await PostController.getPost(event.target.dataset.id)
+        post.echo()
+        await Adapter.updatePost(post)
         
+        PostController.redisplayAllPosts()
+        PostController.redisplayAllReplies(post)
+    }
+
+    static async redisplayAllReplies(post){
+        PostController.clearDiv(PostController.repliesDiv())
+        let replies = await post.getReplies()
+        PostController.displayReplies(replies)
+    
+    }
+
+    static displayAllPosts(posts) {
+        PostController.clearDiv(PostController.postsDiv())
+        posts.forEach(post => PostController.displayPost(post, PostController.postsDiv()))
+    }
+
+    static async displayRepliesOnClick(event) {
+        let reply = document.getElementById('replies-create')
         let post = await PostController.getPost(event.currentTarget.dataset.id)
         let replies = await post.getReplies()
+        reply.dataset.id = replies[0].id
         PostController.displayReplies(replies)
     }
 
@@ -58,6 +91,18 @@ class PostController {
         await Adapter.addPost(Obj).then(serverPost => post = new Post(serverPost))
         // console.log(post)
         PostController.displayPost(post, PostController.postsDiv())
+        event.target.reset()
     }
+
+     static async addReply(event) {
+        event.preventDefault()
+        let post = await PostController.getPost(event.target.dataset.id)
+        // console.log(event.target.postReply.value)
+        await post.reply(event.target.postReply.value)
+
+        let replies = await post.getReplies()
+        PostController.displayReplies(replies)
+        event.target.reset()
+     }
 
 }

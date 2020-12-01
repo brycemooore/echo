@@ -22,9 +22,16 @@ class PostsController < ApplicationController
         end 
     end
 
+    def update
+        @post = Post.find(params[:id])
+        if @post.update(post_params)
+            render json: @post
+        end
+    end
+
     private
 
     def post_params
-        params.require(:post).permit(:user_id, :content)
+        params.require(:post).permit(:user_id, :content, :parent_post_id, :echoes)
     end
 end

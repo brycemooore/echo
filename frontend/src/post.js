@@ -28,9 +28,13 @@ class Post {
        let postEchoes = document.createElement("p")
             postEchoes.append(this.echoes)
 
+        let postLike = document.createElement('button')
+            postLike.dataset.id = this.id
+
         postDiv.appendChild(postUser)
         postDiv.appendChild(postContent)
         postDiv.appendChild(postEchoes)
+        postDiv.appendChild(postLike)
         
         return postDiv
     }
@@ -40,5 +44,16 @@ class Post {
         await Adapter.getReplies(this.id)
         .then(comments => comments.forEach(comment => replies.push(new Post(comment))))
         return replies
+    }
+
+    async reply(content) {
+        let postObj = new Object()
+        postObj.content = content
+        postObj.user_id = localStorage.user_id
+        postObj.parent_post_id = this.id
+
+        let reply 
+        await Adapter.addPost(postObj).then(serverPost => reply = new Post(serverPost))
+        return reply
     }
 }

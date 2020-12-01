@@ -28,5 +28,16 @@ class Adapter {
             .then(res => res.json())
     }
 
+    static updatePost(post){
+        let reqObj = new Object()
+        reqObj.method = 'PATCH';
+        reqObj.headers = { "Content-Type": "application/json"}
+        reqObj.body = JSON.stringify(post);
+
+
+       return fetch(this.#posturl + "/" + post.id, reqObj)
+            .then(res => res.json())
+    }
+
 }
 

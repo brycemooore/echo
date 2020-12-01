@@ -1,7 +1,9 @@
-#post {
+#main {
 float: left;
 }
 
-#replies {
+#main-replies {
 float: right;
+position: relative;
 }
+
