@@ -19,13 +19,10 @@ class Adapter {
     static addPost(post) {
         let reqObj = new Object()
         reqObj.method = 'POST';
-        reqObj.headers = { "Content-Type": "application/json", 
-                            "Accept": "application/json" };
+        reqObj.headers = {"Content-Type": "application/json", 
+                            "Accept": "application/json"};
         reqObj.body = JSON.stringify(post);
-
-
-       return fetch(this.#posturl, reqObj)
-            .then(res => res.json())
+        return fetch(this.#posturl, reqObj).then(res => res.json())
     }
 
     static updatePost(post){
