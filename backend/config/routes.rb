@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get '/posts', to: 'posts#index'
   get '/posts/:id', to: 'posts#show'
   get '/posts/:id/replies', to: 'posts#replies'
+
+  post '/posts', to: 'posts#create'
 end

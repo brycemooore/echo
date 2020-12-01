@@ -17,6 +17,7 @@ class Post {
 
     createPostDiv() {
        let postDiv = document.createElement("div")
+       postDiv.dataset.id = this.id
 
        let postUser = document.createElement("h3")
             postUser.append(this.user.username)
@@ -32,5 +33,12 @@ class Post {
         postDiv.appendChild(postEchoes)
         
         return postDiv
+    }
+
+     async getReplies() {
+        let replies = [this]
+        await Adapter.getReplies(this.id)
+        .then(comments => comments.forEach(comment => replies.push(new Post(comment))))
+        return replies
     }
 }
