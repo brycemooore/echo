@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
     def create
         @new_user = JSON.parse(request.body)
-        byebug
         render json: User.find_or_create_by(username: @new_user.username) 
     end
 end

@@ -39,8 +39,12 @@ class PostController {
         post.echo()
         await Adapter.updatePost(post)
         
-        PostController.redisplayAllPosts()
-        PostController.redisplayAllReplies(post)
+        PostController.displayReplies(await post.getReplies())
+        // event.target.parentNode.children[2].innerText = post.likes
+        document.querySelectorAll(".postLikes" + post.id).forEach(echoes => {echoes.innerText = post.echoes})
+        
+        // PostController.redisplayAllPosts()
+        // PostController.redisplayAllReplies(post)
     }
 
     static async redisplayAllReplies(post){

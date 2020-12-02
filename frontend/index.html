@@ -8,23 +8,34 @@
     <script src="src/post.js"></script>
     <script src="src/postcontroller.js"></script>
     <script src="src/index.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css">
 </head>
 <body>
-    <div id='main'>
-        <form id="post-create">
-            Post Content: <input type="text" name="postContent">
-            <input type="submit" value="Submit">
-        </form>
-        <div id="post"></div>
-    </div>
-    <div id='main-replies'>
-            <div id="replies"></div>
-            <form id="replies-create">
-                Reply Content: <input type="text" name="postReply">
+    <div class='container'>
+        <div id="navigation-bar">
+          <nav>
+                <h1>Echo</h1>
+          </nav>
+        </div>
+
+
+
+    <div class="flex-container"
+        <div class='flex__main'>
+            <form id="post-create">
+                Post Content: <input type="text" name="postContent">
                 <input type="submit" value="Submit">
             </form>
-    </div>  
-    
+            <div id="post"></div>
+        </div>
+        <div class='flex__main'>
+                <div id="replies"></div>
+                <form id="replies-create">
+                    Reply Content: <input type="text" name="postReply">
+                    <input type="submit" value="Submit">
+                </form>
+        </div>  
+    </div>
 </body>
 </html>

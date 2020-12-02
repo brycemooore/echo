@@ -24,9 +24,11 @@ class Post {
 
        let postContent = document.createElement("p")
             postContent.append(this.content)
+            
 
        let postEchoes = document.createElement("p")
             postEchoes.append(this.echoes)
+            postEchoes.classList.add("postLikes" + this.id)
 
         let postLike = document.createElement('button')
             postLike.dataset.id = this.id
