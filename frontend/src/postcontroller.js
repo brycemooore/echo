@@ -21,12 +21,16 @@ class PostController {
 
     static displayPost(post, location) {
         // let postsDiv =  document.getElementById("post")
+        let div = document.createElement('div')
+        div.classList.add("event");
         let postDiv = post.createPostDiv()
          postDiv.addEventListener("click", PostController.displayRepliesOnClick)
+         div.appendChild(postDiv);
         
-         let postLike = postDiv.children[3]
+         let postLike = postDiv.children[2].children[0].children[0]
+        //  let postLike = postDiv.children[3]
          postLike.addEventListener('click', PostController.likePost)
-        location.appendChild(postDiv)
+        location.appendChild(div)
     }
 
     static async redisplayAllPosts() {

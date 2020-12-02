@@ -1,18 +1,11 @@
-.title {
-  position: fixed;
-}
-
-.flex-container {
-  display: grid | inline-grid;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
-}
-
-.flex-container__main {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+.main {
   float: left;
-  padding: 10%;
+  padding: 25px;
+}
+
+.main-replies {
+  float: right;
+  position: relative;
+  padding: 25px;
 }
 /*# sourceMappingURL=style.css.map */

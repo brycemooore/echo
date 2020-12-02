@@ -17,26 +17,52 @@ class Post {
 
     createPostDiv() {
        let postDiv = document.createElement("div")
+       postDiv.classList.add('content');
        postDiv.dataset.id = this.id
 
-       let postUser = document.createElement("h3")
+       let dataDiv = document.createElement('div');
+       dataDiv.classList.add("summary");
+
+       let postUser = document.createElement("a")
+       postUser.classList.add('user');
             postUser.append(this.user.username)
 
-       let postContent = document.createElement("p")
+       let postContent = document.createElement("div")
             postContent.append(this.content)
-            
+            postContent.classList.add("extra");
+            postContent.classList.add("text");
 
-       let postEchoes = document.createElement("p")
+        let metaDiv = document.createElement('div')
+        metaDiv.classList.add("meta");
+
+        let icon = document.createElement('i');
+        icon.classList.add("icon")
+        icon.classList.add("like")
+        icon.dataset.id = this.id;
+
+       let postEchoes = document.createElement("a")
             postEchoes.append(this.echoes)
             postEchoes.classList.add("postLikes" + this.id)
+            postEchoes.classList.add("like")
 
-        let postLike = document.createElement('button')
-            postLike.dataset.id = this.id
+            postEchoes.appendChild(icon);
 
-        postDiv.appendChild(postUser)
-        postDiv.appendChild(postContent)
-        postDiv.appendChild(postEchoes)
-        postDiv.appendChild(postLike)
+
+
+        // let postLike = document.createElement('button')
+        //     postLike.dataset.id = this.id
+
+            dataDiv.appendChild(postUser);
+            postDiv.appendChild(dataDiv);
+            metaDiv.appendChild(postEchoes)
+            // metaDiv.appendChild(postLike);
+            postDiv.appendChild(postContent);
+            postDiv.appendChild(metaDiv);
+
+        // postDiv.appendChild(postUser)
+        // postDiv.appendChild(postContent)
+        // postDiv.appendChild(postEchoes)
+        // postDiv.appendChild(postLike)
         
         return postDiv
     }

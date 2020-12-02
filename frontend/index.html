@@ -21,21 +21,19 @@
 
 
 
-    <div class="flex-container"
-        <div class='flex__main'>
+        <div class='flex__main main'>
             <form id="post-create">
                 Post Content: <input type="text" name="postContent">
                 <input type="submit" value="Submit">
             </form>
-            <div id="post"></div>
+            <div class="ui feed" id="post"></div>
         </div>
-        <div class='flex__main'>
-                <div id="replies"></div>
+        <div class='flex__main main-replies'>
+                <div class="ui feed" id="replies"></div>
                 <form id="replies-create">
                     Reply Content: <input type="text" name="postReply">
                     <input type="submit" value="Submit">
                 </form>
         </div>  
-    </div>
 </body>
 </html>

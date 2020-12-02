@@ -1,17 +1,31 @@
 //title stuff
 
-#container {
-    position: fixed;
+// #container {
+//     position: fixed;
+// }
+
+// body{
+//     padding: 10;
+// }
+
+
+// .flex-container {
+//     display: grid
+//     // grid-template-columns: 1fr 1fr;
+//     // justify-content: left
+//     // align-items: left    
+
+// }
+
+.main {
+    float: left;
+    padding: 25px;
 }
-
-
-
-.flex-container {
-    display: grid
-    grid-template-columns: 1fr 1fr;
-    // justify-content: left
-    // align-items: left    
-
+    
+.main-replies {
+    float: right;
+    position: relative;
+    padding: 25px;
 }
 
     
