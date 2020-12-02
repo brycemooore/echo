@@ -65,7 +65,7 @@ class PostController {
 
     static displayReplies(replies) {
         // let replyDiv = document.getElementById('replies')
-        PostController.clearDiv(replyDiv)
+        PostController.clearDiv(PostController.repliesDiv())
             replies.forEach(reply => PostController.displayPost(reply,PostController.repliesDiv()))
     }
 
