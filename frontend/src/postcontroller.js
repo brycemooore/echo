@@ -68,9 +68,9 @@ class PostController {
     }
 
     static displayReplies(replies) {
-        let replyDiv = document.getElementById('replies')
-        PostController.clearDiv(replyDiv)
-            replies.forEach(reply => PostController.displayPost(reply,replyDiv))
+        // let replyDiv = document.getElementById('replies')
+        PostController.clearDiv(PostController.repliesDiv())
+            replies.forEach(reply => PostController.displayPost(reply,PostController.repliesDiv()))
     }
 
     static async getAllPosts() {
