@@ -16,14 +16,8 @@ class UsersController < ApplicationController
         render json: @user
     end 
 
-<<<<<<< HEAD
     private 
     def user_params
         params.require(:user).permit(:username)   
-=======
-    private
-    def user_params
-        params.require(:user).permit(:username)
->>>>>>> usertime
     end 
 end
