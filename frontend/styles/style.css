@@ -1,13 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Major+Mono+Display);
+html {
+  height: 100vh;
+}
+
+body {
+  background-color: #515D9E;
+  height: 100%;
+  overflow: hidden;
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace;
+  color: #f2eeff;
+  text-align: center;
+  font-weight: 10;
+  font-size: 4em;
+  margin: 10px 0px;
+  letter-spacing: 0.1em;
+}
+
+h2 {
+  text-align: center;
+  color: #f2eeff;
+  margin: 5px 0px;
+  font-family: "Major Mono Display", monospace;
+  font-weight: lighter;
+}
+
 .main {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 55%;
+  height: 85%;
   float: left;
   padding: 25px;
+  overflow: scroll;
+}
+
+.content {
+  margin-bottom: 10px;
+}
+
+a.user {
+  font-weight: thinner;
+  font-size: x-large;
+  color: #f2eeff;
+}
+
+div.extra.text {
+  color: white;
+}
+
+div.meta {
+  color: springgreen;
 }
 
 .main-replies {
   float: right;
   position: relative;
+  width: 30%;
   padding: 25px;
-  color: blue;
+  color: #cfcfe7;
 }
 
 /*# sourceMappingURL=style.css.map */
