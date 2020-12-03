@@ -1,5 +1,6 @@
 class Adapter {
     static #posturl = "http://localhost:3000/posts"
+    static #userURL =  "http://localhost:3000/users"
 
     static getPost(postId) {
         return fetch(this.#posturl + "/" + postId)
@@ -34,6 +35,24 @@ class Adapter {
 
        return fetch(this.#posturl + "/" + post.id, reqObj)
             .then(res => res.json())
+    }
+
+    static getUser(userId) {
+        return fetch(this.#userURL + "/" + userId)
+        .then(res => res.json())
+    }
+
+    static addUser(user){
+        let reqObj = new Object();
+        reqObj.method = 'POST';
+        reqObj.headers = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+        reqObj.body = JSON.stringify(user);
+
+        return fetch(this.#userURL, reqObj)
+        .then(res => res.json());
     }
 
 }
