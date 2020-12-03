@@ -23,7 +23,6 @@ h1 {
     margin: 10px 0px;
     letter-spacing: 0.1em;
 }
-
 h2{
     text-align: center;
     color: $text;
@@ -31,22 +30,27 @@ h2{
     font-family: 'Major Mono Display', monospace;
     font-weight: lighter;
 }
-// .container {
-//     overflow: inherit;
-// }
 
 .main {
     font-family: $font;
+    color: rgb(207, 207, 231);
     width: 55%;
-    height: 85%;
+    height: 760px;
     float: left;
     padding: 25px;
     overflow: scroll;
-    
+}
+form#post-create{
+    font-size: x-large;
+    padding-bottom: 20px;
 }
 
-.content {
-    margin-bottom: 10px;
+
+.content{
+    margin-bottom: 30px;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: rgb(236, 76, 76);
 }
 
 a.user {
@@ -56,10 +60,13 @@ a.user {
 }
 
 div.extra.text {
-    color: rgb(255, 255, 255);
+    padding: 10px 0;
+    font-size: medium;
+    color: rgb(250, 246, 9);
 }
 div.meta{
     color: springgreen;
+    margin: 5px 0;
 }
 
     
@@ -67,9 +74,17 @@ div.meta{
     float: right;
     position: relative;
     width: 30%;
-    padding: 25px;
+    padding-top: 60px;
+    padding-right: 40px;
     color: rgb(207, 207, 231);
+    overflow: scroll;
+    height: 500px;
 }
+
+// #replies.ui.feed{
+//     position: absolute;
+// }
+
 
 .hide{
     display: none;

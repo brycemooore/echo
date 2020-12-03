@@ -29,15 +29,24 @@ h2 {
 
 .main {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #cfcfe7;
   width: 55%;
-  height: 85%;
+  height: 760px;
   float: left;
   padding: 25px;
   overflow: scroll;
 }
 
+form#post-create {
+  font-size: x-large;
+  padding-bottom: 20px;
+}
+
 .content {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #ec4c4c;
 }
 
 a.user {
@@ -47,19 +56,25 @@ a.user {
 }
 
 div.extra.text {
-  color: white;
+  padding: 10px 0;
+  font-size: medium;
+  color: #faf609;
 }
 
 div.meta {
   color: springgreen;
+  margin: 5px 0;
 }
 
 .main-replies {
   float: right;
   position: relative;
   width: 30%;
-  padding: 25px;
+  padding-top: 60px;
+  padding-right: 40px;
   color: #cfcfe7;
+  overflow: scroll;
+  height: 500px;
 }
 
 .hide {
