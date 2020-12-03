@@ -64,7 +64,7 @@ class PostController {
     }
 
     static async displayRepliesOnClick(event) {
-        let reply = document.getElementById('replies-create')
+        // let reply = document.getElementById('replies-create')
         let post = await PostController.getPost(event.currentTarget.dataset.id)
         let replies = await post.getReplies()
         reply.dataset.id = replies[0].id
