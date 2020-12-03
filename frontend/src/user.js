@@ -1,12 +1,21 @@
 class User {
 
    constructor(user){
+<<<<<<< HEAD
        this.id = user.id;
        this.username = user.username;
    }
 
    loggedIn(){
        if (localStorage.user_id == this.id) return true
+=======
+       this.id = user.id
+       this.username = user.username
+   }
+
+   loggedIn(){
+       if(localStorage.user_id == this.id) return true
+>>>>>>> usertime
        else return false
    }
 
@@ -17,6 +26,13 @@ class User {
 
    logOut(){
        localStorage.clear()
+<<<<<<< HEAD
    }
 
+=======
+       location.reload()
+   }
+
+
+>>>>>>> usertime
 }
