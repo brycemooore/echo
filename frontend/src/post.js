@@ -35,10 +35,11 @@ class Post {
         let metaDiv = document.createElement('div')
         metaDiv.classList.add("meta");
 
-        let icon = document.createElement('i');
-        icon.classList.add("icon")
-        icon.classList.add("like")
+        let icon = document.createElement('img');
+        icon.src = ""
+        icon.classList.add('like')
         icon.dataset.id = this.id;
+    
 
        let postEchoes = document.createElement("a")
             postEchoes.append(this.echoes)
