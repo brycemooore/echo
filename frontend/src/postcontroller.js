@@ -66,6 +66,7 @@ class PostController {
     static async displayRepliesOnClick(event) {
         let reply = document.getElementById('replies-create')
         let post = await PostController.getPost(event.currentTarget.dataset.id)
+        document.querySelector(".main-replies").classList.remove("hide")
         let replies = await post.getReplies()
         reply.dataset.id = replies[0].id
         PostController.displayReplies(replies)

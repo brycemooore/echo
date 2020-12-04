@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Major+Mono+Display);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 html {
   height: 100vh;
 }
@@ -10,7 +10,7 @@ body {
 }
 
 h1 {
-  font-family: "Major Mono Display", monospace;
+  font-family: "Montserrat", sans-serif;
   color: #f2eeff;
   text-align: center;
   font-weight: 10;
@@ -23,18 +23,25 @@ h2 {
   text-align: center;
   color: #f2eeff;
   margin: 5px 0px;
-  font-family: "Major Mono Display", monospace;
+  font-family: "Montserrat", sans-serif;
   font-weight: lighter;
 }
 
+#title {
+  border-bottom: solid;
+}
+
 .main {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #cfcfe7;
   width: 55%;
   height: 760px;
   float: left;
   padding: 25px;
+  margin-top: 5px;
   overflow: scroll;
+  border-right: solid;
+  border-width: thin;
 }
 
 form#post-create {
@@ -67,14 +74,20 @@ div.meta {
 }
 
 .main-replies {
+  font-family: "Montserrat", sans-serif;
   float: right;
   position: relative;
-  width: 30%;
-  padding-top: 60px;
+  width: 35%;
+  padding-top: 87px;
   padding-right: 40px;
   color: #cfcfe7;
   overflow: scroll;
-  height: 500px;
+  height: 400px;
+}
+.main-replies h2 {
+  margin: 0 auto;
+  position: inherit;
+  overflow: hidden;
 }
 
 .hide {

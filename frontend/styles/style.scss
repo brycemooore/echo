@@ -1,7 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Major+Mono+Display);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 
-$font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font: 'Montserrat', sans-serif;
 $text: rgb(242, 238, 255);
 
 html {
@@ -15,7 +15,7 @@ body{
 }
 
 h1 {
-    font-family: 'Major Mono Display', monospace;
+    font-family: 'Montserrat', sans-serif;
     color: $text;
     text-align: center;
     font-weight: 10;
@@ -27,18 +27,25 @@ h2{
     text-align: center;
     color: $text;
     margin: 5px 0px;
-    font-family: 'Major Mono Display', monospace;
+    font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
 }
 
+#title{
+    border-bottom: solid;
+}
+
 .main {
-    font-family: $font;
+    font-family: 'Montserrat', sans-serif;
     color: rgb(207, 207, 231);
     width: 55%;
     height: 760px;
     float: left;
     padding: 25px;
+    margin-top: 5px;
     overflow: scroll;
+    border-right: solid;
+    border-width: thin;
 }
 form#post-create{
     font-size: x-large;
@@ -71,14 +78,23 @@ div.meta{
 
     
 .main-replies {
+    
+    h2{
+        margin: 0 auto;
+        position: inherit;
+        overflow: hidden; 
+
+    }
+    
+    font-family: 'Montserrat', sans-serif;
     float: right;
     position: relative;
-    width: 30%;
-    padding-top: 60px;
+    width: 35%;
+    padding-top: 87px;
     padding-right: 40px;
     color: rgb(207, 207, 231);
     overflow: scroll;
-    height: 500px;
+    height: 400px;
 }
 
 // #replies.ui.feed{
