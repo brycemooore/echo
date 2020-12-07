@@ -29,6 +29,26 @@ class PostsController < ApplicationController
         end
     end
 
+    def geo
+        posts = []
+        the_user = User.find(params[:user_id])
+        location = [the_user.lat, the_user.lng]
+        users = User.within(5, :origin => location)
+        users.each do |user|
+            puts user.username
+            user.posts.each do |post|
+                if post.parent_post_id == nil
+                    posts << post
+                end 
+            end 
+        end 
+        puts posts[0].created_at
+        posts = posts.sort do |post_a, post_b|
+            post_a.created_at <=> post_b.created_at
+        end 
+        render json: posts
+    end 
+
     private
 
     def post_params

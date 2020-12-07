@@ -55,5 +55,10 @@ class Adapter {
         .then(res => res.json());
     }
 
+    static getPostsUserLocation(user){
+        return fetch(this.#posturl + 'geo/' + user.id)
+        .then(res => res.json())
+    }
+
 }
 

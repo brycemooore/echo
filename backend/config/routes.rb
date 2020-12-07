@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/posts/:id/replies', to: 'posts#replies'
   patch '/posts/:id', to: 'posts#update'
   post '/posts', to: 'posts#create'
+  get '/postsgeo/:user_id', to: 'posts#geo'
 end
