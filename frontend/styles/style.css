@@ -24,11 +24,40 @@ h2 {
   color: #f2eeff;
   margin: 5px 0px;
   font-family: "Montserrat", sans-serif;
-  font-weight: lighter;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 #title {
   border-bottom: solid;
+}
+
+form#login {
+  margin-top: 50px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: bolder;
+  color: white;
+}
+form#login input[type=text] {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  margin-left: 5px;
+}
+form#login input[type=submit] {
+  width: 10%;
+  padding: 12px 20px;
+  background-color: inherit;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border-color: white;
+  border-radius: 2px;
+  border: solid;
+  border-width: thin;
+  width: 20%;
 }
 
 .main {
@@ -47,13 +76,32 @@ h2 {
 form#post-create {
   font-size: x-large;
   padding-bottom: 20px;
+  padding-right: 5px;
+}
+form#post-create input[type=submit] {
+  width: 10%;
+  padding: 12px 20px;
+  background-color: inherit;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border-color: white;
+  border-radius: 2px;
+  border: solid;
+  border-width: thin;
+  width: 20%;
 }
 
 .content {
+  padding: 5px;
   margin-bottom: 30px;
   border-bottom: solid;
   border-width: 1px;
   border-color: #ec4c4c;
+}
+
+.content:hover {
+  border: solid;
+  border-color: white;
 }
 
 a.user {
@@ -73,6 +121,23 @@ div.meta {
   margin: 5px 0;
 }
 
+div.logout {
+  text-align: right;
+  padding: 5px 0;
+}
+div.logout button#logout-button {
+  width: 10%;
+  padding: 12px 20px;
+  background-color: inherit;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border-color: white;
+  border-radius: 2px;
+  border: solid;
+  border-width: thin;
+  padding: 4px;
+}
+
 .main-replies {
   font-family: "Montserrat", sans-serif;
   float: right;
@@ -88,6 +153,22 @@ div.meta {
   margin: 0 auto;
   position: inherit;
   overflow: hidden;
+}
+.main-replies input[type=submit] {
+  width: 10%;
+  padding: 12px 20px;
+  background-color: inherit;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  border-color: white;
+  border-radius: 2px;
+  border: solid;
+  border-width: thin;
+  width: 20%;
+}
+.main-replies .top-reply {
+  border: solid;
+  border-color: springgreen;
 }
 
 .hide {

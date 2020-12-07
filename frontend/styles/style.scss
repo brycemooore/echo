@@ -3,6 +3,17 @@
 
 $font: 'Montserrat', sans-serif;
 $text: rgb(242, 238, 255);
+@mixin buttons {
+    width: 10%;
+    padding: 12px 20px;
+    background-color: inherit;
+    font-family: $font;
+    color: white;
+    border-color: white;
+    border-radius: 2px;
+    border: solid;
+    border-width: thin;
+}
 
 html {
    height: 100vh;
@@ -15,7 +26,7 @@ body{
 }
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font;
     color: $text;
     text-align: center;
     font-weight: 10;
@@ -27,16 +38,36 @@ h2{
     text-align: center;
     color: $text;
     margin: 5px 0px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: lighter;
+    font-family: $font;
+    font-size: 2em;
+    font-weight: bold;
 }
 
 #title{
     border-bottom: solid;
 }
+form#login {
+    margin-top:50px;
+    text-align: center;
+    font-family: $font;
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: white;
+    input[type=text] {
+        width: 40%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        margin-left: 5px;
+      }
+    input[type=submit] {
+        @include buttons();
+        width: 20%;
+    }
+}
 
 .main {
-    font-family: 'Montserrat', sans-serif;
+    font-family: $font;
     color: rgb(207, 207, 231);
     width: 55%;
     height: 760px;
@@ -50,15 +81,27 @@ h2{
 form#post-create{
     font-size: x-large;
     padding-bottom: 20px;
+    padding-right: 5px;
+
+    input[type=submit] {
+        @include buttons ();
+        width: 20%;
+    }
 }
 
 
 
 .content{
+    padding: 5px;
     margin-bottom: 30px;
     border-bottom: solid;
     border-width: 1px;
     border-color: rgb(236, 76, 76);
+}
+
+.content:hover {
+    border: solid;
+    border-color: white;
 }
 
 a.user {
@@ -77,8 +120,14 @@ div.meta{
     margin: 5px 0;
 }
 
-.like{
-    
+div.logout {
+    text-align: right;
+    padding: 5px 0;
+    button#logout-button {
+        @include buttons();
+        padding: 4px;
+    }
+
 }
     
 .main-replies {
@@ -87,7 +136,6 @@ div.meta{
         margin: 0 auto;
         position: inherit;
         overflow: hidden; 
-
     }
     
     font-family: 'Montserrat', sans-serif;
@@ -99,6 +147,16 @@ div.meta{
     color: rgb(207, 207, 231);
     overflow: scroll;
     height: 400px;
+
+    input[type=submit] {
+        @include buttons();
+        width: 20%;
+    }
+
+    .top-reply{
+        border: solid;
+        border-color: springgreen;
+    }
 }
 
 // #replies.ui.feed{

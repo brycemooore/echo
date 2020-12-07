@@ -19,6 +19,11 @@
     <div id="title">
         <h1>Echō</h1>
         <h2>Speak your truth</h2>
+        <nav>
+            <div class="logout">
+                <button id="logout-button">Log Out</button>
+            </div>
+        </nav>
     </div>
       
     <form id="login">
@@ -26,27 +31,23 @@
         <input type="submit">
     </form>
     <div class='container hide'>
-
-        <div class='main'>
-            <h2>Echoes</h2>
-            <form id="post-create">
-                <p id="post-caption">What's on your mind?</p>
-                <input type="text" name="postContent">
-                <input type="submit" value="Submit">
-            </form>
-            <div class="ui feed" id="post"></div>
-        </div>
-        <div class='main-replies hide'>
-            <h2>Reverbs</h2>
-                <div class="ui feed" id="replies"></div>
-                <form id="replies-create">
-                    Reply Content: <input type="text" name="postReply">
+        <h2>Echoes</h2>
+            <div class='main'>
+                <form id="post-create">
+                    <p id="post-caption">What's on your mind?</p>
+                    <input type="text" name="postContent">
                     <input type="submit" value="Submit">
                 </form>
-        </div>       
-    </div>
-    <div>
-        <button id="logout-button">Log Out</button>
+                <div class="ui feed" id="post"></div>
+            </div>
+        <h2>Reverbs</h2>
+            <div class='main-replies hide'>
+                    <div class="ui feed" id="replies"></div>
+                    <form id="replies-create">
+                        Reply Content: <input type="text" name="postReply">
+                        <input type="submit" value="Submit">
+                    </form>
+            </div>       
     </div>
 </body>
 </html>

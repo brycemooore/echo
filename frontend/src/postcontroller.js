@@ -82,15 +82,36 @@ class PostController {
         document.querySelector(".main-replies").classList.remove("hide")
         let replies = await post.getReplies()
         reply.dataset.id = replies[0].id
+        // PostController.displayReply
         PostController.displayReplies(replies)
     }
 
     static displayReplies(replies) {
         // let replyDiv = document.getElementById('replies')
         PostController.clearDiv(PostController.repliesDiv())
-            replies.forEach(reply => PostController.displayReply(reply))
-    }
+        let counter = 1
+            replies.forEach(reply => {
+                if(counter == 1) PostController.displayFirstReply(reply)
+                else PostController.displayReply(reply)
 
+                counter++
+              
+        })
+    }
+    static displayFirstReply(post) {
+        let location = PostController.repliesDiv()
+        let div = document.createElement('div')
+        let postDiv = post.createPostDiv()
+        postDiv.classList.add("top-reply")
+        postDiv.addEventListener("click", PostController.displayRepliesOnClick)
+        div.appendChild(postDiv);
+        
+         let postLike = postDiv.children[2].children[1]
+        //  let postLike = postDiv.children[3]
+         postLike.addEventListener('click', PostController.likePost)
+        location.appendChild(div)
+    }
+    
     static async getAllPosts() {
         let allPosts = []
         await Adapter.getAllPosts()
