@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Echo</title>
+    <script src="https://kit.fontawesome.com/804e9c79e9.js" crossorigin="anonymous"></script>
     <script src="src/adapter.js"></script>
     <script src="src/user.js"></script>
     <script src="src/usercontroller.js"></script>
@@ -11,7 +12,6 @@
     <script src="src/postcontroller.js"></script>
     <script src="src/index.js"></script>
     <link rel="stylesheet" href="styles/style.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"> -->
 </head>
 <body>
     
@@ -30,7 +30,8 @@
         <div class='main'>
             <h2>Echoes</h2>
             <form id="post-create">
-                What's on your mind?<input type="text" name="postContent">
+                <p id="post-caption">What's on your mind?</p>
+                <input type="text" name="postContent">
                 <input type="submit" value="Submit">
             </form>
             <div class="ui feed" id="post"></div>
@@ -43,6 +44,9 @@
                     <input type="submit" value="Submit">
                 </form>
         </div>       
+    </div>
+    <div>
+        <button id="logout-button">Log Out</button>
     </div>
 </body>
 </html>

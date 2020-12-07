@@ -35,10 +35,12 @@ class Post {
         let metaDiv = document.createElement('div')
         metaDiv.classList.add("meta");
 
-        let icon = document.createElement('img');
-        icon.src = ""
-        icon.classList.add('like')
+        let icon = document.createElement('i');
+        icon.classList.add('fas');
+        icon.classList.add('fa-wifi');
+        // icon.setAttribute('aria-hidden', 'true')
         icon.dataset.id = this.id;
+        icon.title = 'please-stop'
     
 
        let postEchoes = document.createElement("a")
@@ -46,7 +48,6 @@ class Post {
             postEchoes.classList.add("postLikes" + this.id)
             postEchoes.classList.add("like")
 
-            postEchoes.appendChild(icon);
 
 
 
@@ -55,7 +56,8 @@ class Post {
 
             dataDiv.appendChild(postUser);
             postDiv.appendChild(dataDiv);
-            metaDiv.appendChild(postEchoes)
+            metaDiv.appendChild(postEchoes);
+            metaDiv.appendChild(icon);
             // metaDiv.appendChild(postLike);
             postDiv.appendChild(postContent);
             postDiv.appendChild(metaDiv);

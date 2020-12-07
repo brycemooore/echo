@@ -8,8 +8,10 @@ class UserController{
     }
 
     static async init(){
+        let logOut = document.querySelector('#logout-button')
         let loginForm = document.querySelector('#login');
         loginForm.addEventListener('submit', UserController.addUser);
+        logOut.addEventListener('click', UserController.logout);
         if(window.localStorage.length != 0){
             let user = await UserController.getUser(localStorage.user_id);
             if(user.loggedIn()) {
@@ -17,6 +19,11 @@ class UserController{
                 Page.showEveryThing();
             }
         }
+    }
+
+    static logout(){
+        localStorage.clear();
+        location.reload();
     }
 
     static async getUser(id){

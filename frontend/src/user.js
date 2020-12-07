@@ -18,11 +18,6 @@ class User {
        localStorage.username = this.username
    }
 
-   logOut(){
-       localStorage.clear()
-       location.reload()
-   }
-
 //    async getLocation(){
 //        let key = "655243cc5fbe2c7977fc84707856ccbe4c44b4bdbcf320fabedf8b14"
 //        await fetch("https://api.ipdata.co?api-key=" + key)
