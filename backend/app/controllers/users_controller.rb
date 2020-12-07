@@ -5,9 +5,12 @@ class UsersController < ApplicationController
     end
 
     def create
-        @new_user = User.find_or_create_by(user_params)
-        if @new_user.save
-            render json: @new_user
+        @user = User.find_by(username: user_params[:username])
+        if @user == nil
+            @user = User.create(user_params)
+        end 
+        if @user.save
+            render json: @user
         end 
     end
 

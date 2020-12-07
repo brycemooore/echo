@@ -8,7 +8,8 @@ class PostController {
         // let postsDiv =  document.getElementById("post")
         postForm.addEventListener("submit", PostController.addPost)
         replyForm.addEventListener("submit", PostController.addReply)
-        let feed = await PostController.getAllPosts()
+        let feed = await PostController.getPostsGeo()
+        
         PostController.displayAllPosts(feed)
     }
 
@@ -19,18 +20,32 @@ class PostController {
         return returnPost
     }
 
-    static displayPost(post, location) {
-        // let postsDiv =  document.getElementById("post")
+    static displayReply(post){
+        let location = PostController.repliesDiv()
         let div = document.createElement('div')
         div.classList.add("event");
         let postDiv = post.createPostDiv()
-         postDiv.addEventListener("click", PostController.displayRepliesOnClick)
-         div.appendChild(postDiv);
+        postDiv.addEventListener("click", PostController.displayRepliesOnClick)
+        div.appendChild(postDiv);
         
          let postLike = postDiv.children[2].children[0].children[0]
         //  let postLike = postDiv.children[3]
          postLike.addEventListener('click', PostController.likePost)
         location.appendChild(div)
+    }
+
+    static displayPost(post, location) {
+        // let postsDiv =  document.getElementById("post")
+        let div = document.createElement('div')
+        div.classList.add("event");
+        let postDiv = post.createPostDiv()
+        postDiv.addEventListener("click", PostController.displayRepliesOnClick)
+        div.appendChild(postDiv);
+        
+         let postLike = postDiv.children[2].children[0].children[0]
+        //  let postLike = postDiv.children[3]
+         postLike.addEventListener('click', PostController.likePost)
+        location.prepend(div)
     }
 
     static async redisplayAllPosts() {
@@ -75,7 +90,7 @@ class PostController {
     static displayReplies(replies) {
         // let replyDiv = document.getElementById('replies')
         PostController.clearDiv(PostController.repliesDiv())
-            replies.forEach(reply => PostController.displayPost(reply,PostController.repliesDiv()))
+            replies.forEach(reply => PostController.displayReply(reply))
     }
 
     static async getAllPosts() {
@@ -83,6 +98,13 @@ class PostController {
         await Adapter.getAllPosts()
         .then(posts => posts.forEach(post => allPosts.push(new Post(post))))
         return allPosts
+    }
+
+    static async getPostsGeo(){
+        let allPosts = [];
+        await Adapter.getPostsUserLocation(await UserController.getCurrentUser())
+        .then(posts => posts.forEach(post => allPosts.push(new Post(post))));
+        return allPosts;
     }
 
     static clearDiv(location) {
@@ -98,7 +120,6 @@ class PostController {
         Obj.user_id = localStorage.user_id
         let post 
         await Adapter.addPost(Obj).then(serverPost => post = new Post(serverPost))
-        // console.log(post)
         PostController.displayPost(post, PostController.postsDiv())
         event.target.reset()
     }

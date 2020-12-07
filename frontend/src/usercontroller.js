@@ -43,4 +43,8 @@ class UserController{
         location.reload()
     }
 
+    static getCurrentUser(){
+        return this.getUser(localStorage.user_id);
+    }
+
 }
