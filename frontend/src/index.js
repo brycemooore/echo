@@ -19,7 +19,7 @@ class Page{
     }
 
     static randomizePost(){
-        let items = ["What's on your mind?", "How ya feelin?", "Tell a secret :)", "What are you grateful for?", "Go off", "*inserts rant here*"]
+        let items = ["What's on your mind?", "How ya feelin? Be honest.", "Tell a secret, shout it to the void:", "What are you grateful for?", "Go off :", "*Insert rant here*"]
         let caption = document.getElementById('post-caption');
         caption.innerText = items[Math.floor(Math.random() * items.length)]
     }
