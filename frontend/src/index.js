@@ -23,4 +23,8 @@ class Page{
         let caption = document.getElementById('post-caption');
         caption.innerText = items[Math.floor(Math.random() * items.length)]
     }
+
+    static async setUserName(){
+        document.getElementById('speak').append(" " + localStorage.username)
+    }
 }

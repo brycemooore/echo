@@ -17,6 +17,7 @@ class UserController{
             if(user.loggedIn()) {
                 Page.hide(loginForm);
                 Page.showEveryThing();
+                Page.setUserName();
             }
         }
     }

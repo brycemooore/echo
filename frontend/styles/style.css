@@ -69,7 +69,7 @@ form#login input[type=submit] {
 }
 .header span.subtitle1 {
   position: fixed;
-  right: 1200px;
+  right: 1600px;
   float: left;
   font-family: "Montserrat", sans-serif;
   text-align: center;
@@ -78,7 +78,7 @@ form#login input[type=submit] {
 }
 .header span.subtitle2 {
   position: absolute;
-  right: 300px;
+  right: 400px;
   font-family: "Montserrat", sans-serif;
   text-align: center;
   color: #f2eeff;
