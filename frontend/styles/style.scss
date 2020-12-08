@@ -3,6 +3,7 @@
 
 $font: 'Montserrat', sans-serif;
 $text: rgb(242, 238, 255);
+
 @mixin buttons {
     width: 10%;
     padding: 12px 20px;
@@ -14,6 +15,16 @@ $text: rgb(242, 238, 255);
     border: solid;
     border-width: thin;
 }
+
+@mixin text-field {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin-left: 5px;
+}
+
+
 
 html {
    height: 100vh;
@@ -30,7 +41,7 @@ h1 {
     color: $text;
     text-align: center;
     font-weight: 10;
-    font-size: 4em;
+    font-size: 4.5em;
     margin: 10px 0px;
     letter-spacing: 0.1em;
 }
@@ -45,20 +56,20 @@ h2{
 
 #title{
     border-bottom: solid;
+    border-width: 1px;
+    border-color:rgb(242, 238, 255);
+    box-shadow:  0px 8px 10px -10px #ffffff;
 }
+
 form#login {
     margin-top:50px;
     text-align: center;
     font-family: $font;
     font-size: 1.5em;
     font-weight: bolder;
-    color: white;
+    color: $text;
     input[type=text] {
-        width: 40%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        margin-left: 5px;
+        @include text-field();
       }
     input[type=submit] {
         @include buttons();
@@ -66,10 +77,33 @@ form#login {
     }
 }
 
+.header{
+
+    padding-bottom: 40px;
+    margin: 5px 0;
+    span.subtitle1 {
+        position: fixed;
+        right: 1200px;
+        float: left;
+        font-family: $font;
+        text-align: center;
+        color: $text;
+        font-size: 2.5em;
+    }
+    span.subtitle2 {
+        position: absolute;
+        right: 300px;
+        font-family: $font;
+        text-align: center;
+        color: $text;
+        font-size: 2.5em;
+    }
+}
 .main {
+    position: relative;
     font-family: $font;
     color: rgb(207, 207, 231);
-    width: 55%;
+    width: 50%;
     height: 760px;
     float: left;
     padding: 25px;
@@ -82,6 +116,11 @@ form#post-create{
     font-size: x-large;
     padding-bottom: 20px;
     padding-right: 5px;
+
+    input[type=text] {
+        @include text-field();
+        width: 50%;
+    }
 
     input[type=submit] {
         @include buttons ();
@@ -96,35 +135,51 @@ form#post-create{
     margin-bottom: 30px;
     border-bottom: solid;
     border-width: 1px;
-    border-color: rgb(236, 76, 76);
+    border-color:white;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color:rgb(242, 238, 255);
+    box-shadow:  0px 8px 10px -11px #ffffff;
+
+    i.fas.fa-wifi{
+        margin: 6px;
+    }
+
+    i.fas.fa-wifi:hover{
+        color: springgreen;
+    }
 }
 
 .content:hover {
     border: solid;
-    border-color: white;
+    border-color: rgb(255, 241, 179);
 }
 
 a.user {
-    font-weight: thinner;
+    font-weight: bolder;
     font-size: x-large;
     color: $text;
 }
 
 div.extra.text {
     padding: 10px 0;
-    font-size: medium;
-    color: rgb(250, 246, 9);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: rgb(253, 249, 0);
 }
+
 div.meta{
-    color: springgreen;
+    color: white;
     margin: 5px 0;
 }
 
+
 div.logout {
     text-align: right;
-    padding: 5px 0;
+    padding: 10px 5px;
     button#logout-button {
         @include buttons();
+        width: 20%;
         padding: 4px;
     }
 
@@ -132,22 +187,20 @@ div.logout {
     
 .main-replies {
     
-    h2{
-        margin: 0 auto;
-        position: inherit;
-        overflow: hidden; 
-    }
-    
     font-family: 'Montserrat', sans-serif;
     float: right;
     position: relative;
+    right: 100px;
     width: 35%;
-    padding-top: 87px;
+    padding-top: 25px;
     padding-right: 40px;
     color: rgb(207, 207, 231);
     overflow: scroll;
-    height: 400px;
+    height: 500px;
 
+    input[type=text] {
+        @include text-field();
+    }
     input[type=submit] {
         @include buttons();
         width: 20%;
@@ -155,13 +208,11 @@ div.logout {
 
     .top-reply{
         border: solid;
-        border-color: springgreen;
+        border-color: rgb(216, 212, 174);
     }
 }
 
-// #replies.ui.feed{
-//     position: absolute;
-// }
+
 
 
 .hide{
